@@ -7,11 +7,16 @@
 import SwiftUI
 import Toolbox
 
-struct VSlider: View {
-    @Binding var sliderProgress: CGFloat
+public struct VSlider: View {
+    @Binding public var sliderProgress: CGFloat
     @State private var dragGestureValue: CGFloat = 0
     
-    var body: some View {
+    public init(sliderProgress: Binding<CGFloat>) {
+        self._sliderProgress = sliderProgress
+        self.dragGestureValue = 0
+    }
+    
+    public var body: some View {
         ZStack {
             GeometryReader { proxy in
                 ZStack(alignment: .center) {

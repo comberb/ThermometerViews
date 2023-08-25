@@ -7,10 +7,14 @@
 import SwiftUI
 import Toolbox
 
-struct Marker: View {
-    @Binding var progress: CGFloat
+public struct Marker: View {
+    @Binding public var progress: CGFloat
     
-    var body: some View {
+    public init(progress: Binding<CGFloat>) {
+        self._progress = progress
+    }
+    
+    public var body: some View {
         ZStack(content:{
             Rectangle()
                 .fill(Color(UIColor(hex: "#DFE5F1")).opacity(0.5))

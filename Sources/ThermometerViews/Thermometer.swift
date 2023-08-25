@@ -7,15 +7,22 @@
 import SwiftUI
 import Wave
 
-struct Thermometer: View {
+public struct Thermometer: View {
     @State private var phase = 0.0
-    @Binding var progress: CGFloat
-    @Binding var strength: Double
-    @Binding var frequency: Double
+    @Binding public var progress: CGFloat
+    @Binding public var strength: Double
+    @Binding public var frequency: Double
+    
+    public init(phase: Double = 0.0, progress: Binding<CGFloat>, strength: Binding<Double>, frequency: Binding<Double>) {
+        self.phase = phase
+        self._progress = progress
+        self._strength = strength
+        self._frequency = frequency
+    }
 
-    let lightGray = Color(red: 236/255, green: 234/255, blue: 235/255)
+    private let lightGray = Color(red: 236/255, green: 234/255, blue: 235/255)
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             GeometryReader { proxy in
                 WaterWave(
