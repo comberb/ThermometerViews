@@ -8,10 +8,16 @@ import SwiftUI
 import Wave
 
 public struct Thermometer: View {
-    @State private var phase = 0.0
+    // MARK: Properties
+    
     @Binding public var progress: CGFloat
     @Binding public var strength: Double
     @Binding public var frequency: Double
+    @State private var phase = 0.0
+    
+    private let lightGray = Color(red: 236/255, green: 234/255, blue: 235/255)
+    
+    // MARK: Lifecycle
     
     public init(phase: Double = 0.0, progress: Binding<CGFloat>, strength: Binding<Double>, frequency: Binding<Double>) {
         self.phase = phase
@@ -20,7 +26,7 @@ public struct Thermometer: View {
         self._frequency = frequency
     }
 
-    private let lightGray = Color(red: 236/255, green: 234/255, blue: 235/255)
+    // MARK: Views
 
     public var body: some View {
         ZStack {
