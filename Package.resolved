@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "toolbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/comberb/Toolbox",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6299722c28814bfbc8608e294c0b5316449bd787"
+      }
+    },
+    {
+      "identity" : "wave",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/comberb/Wave",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1a87f7aaa92566ec74f0e0248cf9d4a6c4ba14f2"
+      }
+    }
+  ],
+  "version" : 2
+}
