@@ -8,11 +8,17 @@ import SwiftUI
 import Toolbox
 
 public struct Marker: View {
+    // MARK: Properties
+    
     @Binding public var progress: CGFloat
+    
+    // MARK: Lifecycle
     
     public init(progress: Binding<CGFloat>) {
         self._progress = progress
     }
+    
+    // MARK: Views
     
     public var body: some View {
         ZStack(content:{
